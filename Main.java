@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 /**
- *
+ * @author Jake Wilkinson
  * @author agodbey7
  */
 public class Main {
