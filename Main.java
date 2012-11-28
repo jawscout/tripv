@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 /**
- * Class Project
+ * To show how to use git, add your name to the authors.
  * @author Jake Wilkinson
  * @author agodbey7
  */
