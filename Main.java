@@ -1,4 +1,3 @@
-
 package pplcompiler;
 
 import java.io.BufferedReader;
@@ -14,11 +13,8 @@ import java.util.StringTokenizer;
  * @author Jake Wilkinson
  * @author Andrew Godbey
  * @author Andrew Davis
-<<<<<<< HEAD
  * @author SATAN!!! , and secretary (Sam)
-=======
  * @author Tom Binner
->>>>>>> ff867ae2c7ee8387115af6ad678a0010178cad7f
  */
 public class Main {
 
