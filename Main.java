@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
  * To show how to use git, add your name to the authors.
  * @author Jake Wilkinson
  * @author agodbey7
+ * @author Andrew Davis
  */
 public class Main {
 
