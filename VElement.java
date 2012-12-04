@@ -1,6 +1,6 @@
 package pplcompiler;
-public class VElement{
-public abstract toHTML();
+public abstract class VElement{
+public abstract void toHTML();
 public String alignment = "top left";
 public String color = "white";
 }
