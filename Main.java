@@ -20,9 +20,9 @@ import java.util.StringTokenizer;
 public class Main {
 
     /**
-* @param args the command line arguments
-*/
-    public static void main(String[] args) throws IOException{
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException, Exception{
         BufferedReader fin = new BufferedReader(new FileReader("input.txt"));
         BufferedWriter fout = new BufferedWriter(new FileWriter("ouptut.html"));
         String titleIn = fin.readLine();
@@ -41,12 +41,35 @@ public class Main {
             StringTokenizer st = new StringTokenizer(lineIn);
             String firstWord = st.nextToken();
             if(firstWord.toLowerCase() == "make"){
-                //make(fin, fout, st);
+                String secondWord = st.nextToken();
+                if(secondWord.toLowerCase() == "list"){
+                    VList vList = new VList(st);
+                    vList.print();
+                }
+                else if(secondWord.toLowerCase() == "textfield")
+                {
+                    VTextfield vTextfield = new VTextfield(st);
+                    vTextfield.print();
+                }
+                else if(secondWord.toLowerCase() == "table"){
+                    VTable vTable = new VTable(st);
+                    vTable.print();
+                }
+                else if(secondWord.toLowerCase() == "picture"){
+                    VPicture vPicture = new VPicture(st);
+                    vPicture.print();
+                }
+                else if(secondWord.toLowerCase() == "link"){
+                    VLink vLink = new VLink(st);
+                    vLink.print();
+                }
+                else{
+                    throw new Exception("Syntax Exception on Second Word");
+                }
             }
-            if(firstWord.toLowerCase() == "put"){
-                //put(fin, fout, st);
+            else{
+                throw new Exception("Syntax Error.");
             }
-            if(firstWord.toLowerCase() == "")
             lineIn = fin.readLine();
         }
         fout.write("</body>");
@@ -54,6 +77,10 @@ public class Main {
         fout.write("</html>");
         fin.close();
         fout.close();
+    }
+
+    private static void make(BufferedReader fin, BufferedWriter fout, StringTokenizer st) {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
 }
