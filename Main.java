@@ -27,6 +27,12 @@ import java.util.StringTokenizer;
  * and open the template in the editor.
  */
 
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
 public class Main {
 
     /**
@@ -223,63 +229,63 @@ public class Main {
         }
         fout.write("<div>");
         for(VElement element: leftTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: leftMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: leftBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: centerTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: centerMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: centerBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: rightTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: rightMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
         fout.write("<div>");
         for(VElement element: rightBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
@@ -292,4 +298,3 @@ public class Main {
     }
 
 }
-
