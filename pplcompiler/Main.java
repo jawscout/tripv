@@ -49,15 +49,15 @@ public class Main {
         fout.write("<body>");
         fout.newLine();
         String lineIn = fin.readLine();
-        List<VElement> leftTop = new ArrayList();
-        List<VElement> leftMiddle = new ArrayList();
-        List<VElement> leftBottom = new ArrayList();
-        List<VElement> centerTop = new ArrayList();
-        List<VElement> centerMiddle = new ArrayList();
-        List<VElement> centerBottom = new ArrayList();
-        List<VElement> rightTop = new ArrayList();
-        List<VElement> rightMiddle = new ArrayList();
-        List<VElement> rightBottom = new ArrayList();
+        List<VElement> leftTop = new ArrayList<VElement>();
+        List<VElement> leftMiddle = new ArrayList<VElement>();
+        List<VElement> leftBottom = new ArrayList<VElement>();
+        List<VElement> centerTop = new ArrayList<VElement>();
+        List<VElement> centerMiddle = new ArrayList<VElement>();
+        List<VElement> centerBottom = new ArrayList<VElement>();
+        List<VElement> rightTop = new ArrayList<VElement>();
+        List<VElement> rightMiddle = new ArrayList<VElement>();
+        List<VElement> rightBottom = new ArrayList<VElement>();
         while(!lineIn.toLowerCase().equals("end")){
             StringTokenizer st = new StringTokenizer(lineIn);
             String firstWord = st.nextToken();
