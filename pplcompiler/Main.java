@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -93,7 +95,7 @@ public class Main {
                 }
                 else if(secondWord.toLowerCase().equals("textfield"))
                 {
-                    VTextfield vTextfield = new VTextfield(st);
+                    VTextField vTextfield = new VTextField(st);
                     if(vTextfield.alignment.equals("left top")){
                         leftTop.add(vTextfield);
                     }
