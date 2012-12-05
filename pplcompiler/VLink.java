@@ -9,7 +9,8 @@ class VLink extends VElement{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void toHTML() {
+	public String toHTML() {
+		return "";
 		
 	}
 	

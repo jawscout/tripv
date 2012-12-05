@@ -9,9 +9,9 @@ class VPicture extends VElement{
 	}
 
 	@Override
-	public void toHTML() {
+	public String toHTML() {
 		// TODO Auto-generated method stub
-		
+		return "";
 	}
 	
 }
