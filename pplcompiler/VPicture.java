@@ -51,7 +51,7 @@ class VPicture extends VElement
             }
             else
             {
-                throws new Exception();
+                throw new SyntaxException("incorrect syntax: "+st[pos]);
                 pos++;
             }
         }
