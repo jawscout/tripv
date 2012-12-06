@@ -1,5 +1,5 @@
 package pplcompiler;
-//hi
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -225,6 +225,7 @@ public class Main {
             }
             lineIn = fin.readLine();
         }
+        }
         fout.write("<div>");
         for(VElement element: leftTop){
             element.toHTML();
@@ -293,7 +294,6 @@ public class Main {
         fout.write("</html>");
         fin.close();
         fout.close();
-        }
     }
 
 }
