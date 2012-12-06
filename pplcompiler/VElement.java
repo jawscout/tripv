@@ -8,7 +8,7 @@ public abstract class VElement{
 	//Required classes
 	public abstract String toHTML();
 	//Inherited variables
-	public String alignment = "top left";
+	public String alignment = "left top";
 	public String color = "black";
 }
 	
