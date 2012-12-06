@@ -7,34 +7,39 @@ class VLink extends VElement
     private String url;
     private String text;
     
-    public VLink(StringTokenizer st) 
+    public VLink(String[] st, int pos) 
     {
-        String temp;
-        while(st.hasMoreTokens())
-        {
-            temp = st.nextToken();
-            if(temp.contains("http"))
-            {
-                url = temp;
-            }
-            /**
-             * The next 2 if blocks assume that if alignment and color are 
-             * specified then they are specified in the following syntax:
-             * alignment/color = XXXX
+        /**
+             * I assume that for all class variables, they are defined in the 
+             * format Parameter = XXXXYYYY. Elements not in this format will 
+             * throw an exception. 
              */
-            else if(temp.contains("alignment"))
+        while(pos <= st.length)
+        {
+            if(st[pos].equalsIgnoreCase("url"))
             {
-                temp = st.nextToken();
-                alignment = st.nextToken();
+                url = st[pos+2];
+                pos += 2;
             }
-            else if(temp.contains("color"))
+            else if(st[pos].equalsIgnoreCase("alignment"))
             {
-                temp = st.nextToken();
-                color = st.nextToken();
+                alignment = st[pos+=2];
+                pos += 2;
+            }
+            else if(st[pos].equalsIgnoreCase("color"))
+            {
+                color = st[pos+2];
+                pos += 2;
+            }
+            else if(st[pos].equalsIgnoreCase("text"))
+            {
+                text = st[pos+2];
+                pos += 2;
             }
             else
             {
-                text = temp;
+                throw new exception();
+                pos++;
             }
         }
     }
