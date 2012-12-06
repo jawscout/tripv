@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
 * To show how to use git, add your name to the authors.
@@ -54,7 +56,14 @@ public class Main {
         String[] st = null;
         while(!lineIn.toLowerCase().equals("end")){
             try{
-            st = lineIn.split("[^\\s\"']+|\"([^\"]*)\"|'([^']*)'");
+            List<String> matchList = new ArrayList<String>();
+Pattern regex = Pattern.compile("[^\\s\"']+|\"[^\"]*\"|'[^']*'");
+Matcher regexMatcher = regex.matcher(lineIn);
+while (regexMatcher.find()) {
+    matchList.add(regexMatcher.group());
+}
+st =            (String[]) matchList.toArray();
+            //st = lineIn.split(" "/*"[^\\s\"']+|\"([^\"]*)\"|'([^']*)'"*/);
             firstWord = st[0];
             }
             catch(Exception e){
