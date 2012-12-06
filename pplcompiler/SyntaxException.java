@@ -6,7 +6,7 @@
 package pplcompiler;
 
 /**
- *
+ * 
  * @author agodbey7
  */
 public class SyntaxException extends Exception{
