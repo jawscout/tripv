@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -23,8 +24,8 @@ import java.util.StringTokenizer;
 public class Main {
 
     /**
-     * @param args the command line arguments
-     */
+* @param args the command line arguments
+*/
     public static void main(String[] args) throws IOException, Exception{
         BufferedReader fin = new BufferedReader(new FileReader("input.txt"));
         BufferedWriter fout = new BufferedWriter(new FileWriter("ouptut.html"));
@@ -49,168 +50,178 @@ public class Main {
         List<VElement> rightTop = new ArrayList<VElement>();
         List<VElement> rightMiddle = new ArrayList<VElement>();
         List<VElement> rightBottom = new ArrayList<VElement>();
+        String firstWord = null;
+        String[] st = null;
         while(!lineIn.toLowerCase().equals("end")){
-            StringTokenizer st = new StringTokenizer(lineIn);
-            String firstWord = st.nextToken();
+            try{
+            st = lineIn.split("[^\\s\"']+|\"([^\"]*)\"|'([^']*)'");
+            firstWord = st[0];
+            }
+            catch(Exception e){
+                System.out.println("Error on first read. Make sure your input file is not empty");
+                e.printStackTrace();
+            }
             if(firstWord.toLowerCase().equals("make")){
-                String secondWord = st.nextToken();
-                if(secondWord.toLowerCase().equals("list")){
-                    VList vList = new VList(st);
-                    if(vList.alignment.equals("left top")){
-                        leftTop.add(vList);
+                String secondWord = st[1];
+                try{
+                    if(secondWord.toLowerCase().equals("list")){
+                        VList vList = new VList(st, 2);
+                        if(vList.alignment.equals("left top")){
+                            leftTop.add(vList);
+                        }
+                        else if(vList.alignment.equals("left middle")){
+                            leftMiddle.add(vList);
+                        }
+                        else if(vList.alignment.equals("left bottom")){
+                            leftBottom.add(vList);
+                        }
+                        else if(vList.alignment.equals("center top")){
+                            centerTop.add(vList);
+                        }
+                        else if(vList.alignment.equals("center middle")){
+                            centerMiddle.add(vList);
+                        }
+                        else if(vList.alignment.equals("center bottom")){
+                            centerBottom.add(vList);
+                        }
+                        else if(vList.alignment.equals("right top")){
+                            rightTop.add(vList);
+                        }
+                        else if(vList.alignment.equals("right middle")){
+                            rightMiddle.add(vList);
+                        }
+                        else if(vList.alignment.equals("right bottom")){
+                            rightBottom.add(vList);
+                        }
                     }
-                    else if(vList.alignment.equals("left middle")){
-                        leftMiddle.add(vList);
+                    else if(secondWord.toLowerCase().equals("textfield"))
+                    {
+                        VTextField vTextfield = new VTextField(st, 2);
+                        if(vTextfield.alignment.equals("left top")){
+                            leftTop.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("left middle")){
+                            leftMiddle.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("left bottom")){
+                            leftBottom.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("center top")){
+                            centerTop.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("center middle")){
+                            centerMiddle.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("center bottom")){
+                            centerBottom.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("right top")){
+                            rightTop.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("right middle")){
+                            rightMiddle.add(vTextfield);
+                        }
+                        else if(vTextfield.alignment.equals("right bottom")){
+                            rightBottom.add(vTextfield);
+                        }
                     }
-                    else if(vList.alignment.equals("left bottom")){
-                        leftBottom.add(vList);
+                    else if(secondWord.toLowerCase().equals("table")){
+                        VTable vTable = new VTable(st, 2);
+                        if(vTable.alignment.equals("left top")){
+                            leftTop.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("left middle")){
+                            leftMiddle.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("left bottom")){
+                            leftBottom.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("center top")){
+                            centerTop.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("center middle")){
+                            centerMiddle.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("center bottom")){
+                            centerBottom.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("right top")){
+                            rightTop.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("right middle")){
+                            rightMiddle.add(vTable);
+                        }
+                        else if(vTable.alignment.equals("right bottom")){
+                            rightBottom.add(vTable);
+                        }
                     }
-                    else if(vList.alignment.equals("center top")){
-                        centerTop.add(vList);
+                    else if(secondWord.toLowerCase().equals("picture")){
+                        VPicture vPicture = new VPicture(st, 2);
+                        if(vPicture.alignment.equals("left top")){
+                            leftTop.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("left middle")){
+                            leftMiddle.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("left bottom")){
+                            leftBottom.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("center top")){
+                            centerTop.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("center middle")){
+                            centerMiddle.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("center bottom")){
+                            centerBottom.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("right top")){
+                            rightTop.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("right middle")){
+                            rightMiddle.add(vPicture);
+                        }
+                        else if(vPicture.alignment.equals("right bottom")){
+                            rightBottom.add(vPicture);
+                        }
                     }
-                    else if(vList.alignment.equals("center middle")){
-                        centerMiddle.add(vList);
+                    else if(secondWord.toLowerCase().equals("link")){
+                        VLink vLink = new VLink(st, 2);
+                        if(vLink.alignment.equals("left top")){
+                            leftTop.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("left middle")){
+                            leftMiddle.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("left bottom")){
+                            leftBottom.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("center top")){
+                            centerTop.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("center middle")){
+                            centerMiddle.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("center bottom")){
+                            centerBottom.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("right top")){
+                            rightTop.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("right middle")){
+                            rightMiddle.add(vLink);
+                        }
+                        else if(vLink.alignment.equals("right bottom")){
+                            rightBottom.add(vLink);
+                        }
                     }
-                    else if(vList.alignment.equals("center bottom")){
-                        centerBottom.add(vList);
-                    }
-                    else if(vList.alignment.equals("right top")){
-                        rightTop.add(vList);
-                    }
-                    else if(vList.alignment.equals("right middle")){
-                        rightMiddle.add(vList);
-                    }
-                    else if(vList.alignment.equals("right bottom")){
-                        rightBottom.add(vList);
-                    }
-                }
-                else if(secondWord.toLowerCase().equals("textfield"))
-                {
-                    VTextField vTextfield = new VTextField(st);
-                    if(vTextfield.alignment.equals("left top")){
-                        leftTop.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("left middle")){
-                        leftMiddle.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("left bottom")){
-                        leftBottom.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("center top")){
-                        centerTop.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("center middle")){
-                        centerMiddle.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("center bottom")){
-                        centerBottom.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("right top")){
-                        rightTop.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("right middle")){
-                        rightMiddle.add(vTextfield);
-                    }
-                    else if(vTextfield.alignment.equals("right bottom")){
-                        rightBottom.add(vTextfield);
-                    }
-                }
-                else if(secondWord.toLowerCase().equals("table")){
-                    VTable vTable = new VTable(st);
-                    if(vTable.alignment.equals("left top")){
-                        leftTop.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("left middle")){
-                        leftMiddle.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("left bottom")){
-                        leftBottom.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("center top")){
-                        centerTop.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("center middle")){
-                        centerMiddle.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("center bottom")){
-                        centerBottom.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("right top")){
-                        rightTop.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("right middle")){
-                        rightMiddle.add(vTable);
-                    }
-                    else if(vTable.alignment.equals("right bottom")){
-                        rightBottom.add(vTable);
-                    }
-                }
-                else if(secondWord.toLowerCase().equals("picture")){
-                    VPicture vPicture = new VPicture(st);
-                    if(vPicture.alignment.equals("left top")){
-                        leftTop.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("left middle")){
-                        leftMiddle.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("left bottom")){
-                        leftBottom.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("center top")){
-                        centerTop.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("center middle")){
-                        centerMiddle.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("center bottom")){
-                        centerBottom.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("right top")){
-                        rightTop.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("right middle")){
-                        rightMiddle.add(vPicture);
-                    }
-                    else if(vPicture.alignment.equals("right bottom")){
-                        rightBottom.add(vPicture);
-                    }
-                }
-                else if(secondWord.toLowerCase().equals("link")){
-                    VLink vLink = new VLink(st);
-                    if(vLink.alignment.equals("left top")){
-                        leftTop.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("left middle")){
-                        leftMiddle.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("left bottom")){
-                        leftBottom.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("center top")){
-                        centerTop.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("center middle")){
-                        centerMiddle.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("center bottom")){
-                        centerBottom.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("right top")){
-                        rightTop.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("right middle")){
-                        rightMiddle.add(vLink);
-                    }
-                    else if(vLink.alignment.equals("right bottom")){
-                        rightBottom.add(vLink);
-                    }
-                }
                 else{
-                    throw new Exception("Syntax Exception on Second Word");
+                    throw new SyntaxException("Syntax Exception on Second Word");
                 }
             }
-            else{
-                throw new Exception("Syntax Error.");
+            catch(SyntaxException se){
+                System.out.println("Syntax Exception.");
+                se.printStackTrace();
             }
             lineIn = fin.readLine();
         }
@@ -282,6 +293,7 @@ public class Main {
         fout.write("</html>");
         fin.close();
         fout.close();
+        }
     }
 
 }
