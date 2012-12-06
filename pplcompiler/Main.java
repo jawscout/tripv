@@ -223,8 +223,8 @@ public class Main {
                 System.out.println("Syntax Exception.");
                 se.printStackTrace();
             }
+            }
             lineIn = fin.readLine();
-        }
         }
         fout.write("<div>");
         for(VElement element: leftTop){
