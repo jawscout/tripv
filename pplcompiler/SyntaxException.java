@@ -20,7 +20,7 @@ public class SyntaxException extends Exception{
 
     @Override
     public void printStackTrace(){
-        System.out.println(reason);
+        System.out.println("Syntax Exception Reason: " + reason);
         printStackTrace();
     }
 }
