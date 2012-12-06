@@ -38,7 +38,7 @@ class VLink extends VElement
             }
             else
             {
-                throw new exception();
+                throw new SyntaxException("incorrect syntax: "+st[pos]);
                 pos++;
             }
         }
