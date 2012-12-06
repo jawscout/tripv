@@ -1,3 +1,5 @@
-title
+Test Case 1
+make link alignent = "top left" url = "http://www.google.com" text = "This is a link"
+make picture alignment = "center middle" url = "http://www.expressyouraddress.com/Shop/pc/catalog/90-141_SmileyFace_200.jpg" text = "Smiley Face"
 end
 
