@@ -8,6 +8,10 @@ class VTextField extends VElement{
 		// TODO Auto-generated constructor stub
 	}
 
+	public VTextField(String[] st, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toHTML() {
 		// TODO Auto-generated method stub
