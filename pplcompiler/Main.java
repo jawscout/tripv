@@ -28,12 +28,12 @@ public class Main {
     public static void main(String[] args) throws IOException, Exception{
         BufferedReader fin = new BufferedReader(new FileReader("input.txt"));
         BufferedWriter fout = new BufferedWriter(new FileWriter("ouptut.html"));
-        String titleIn = fin.readLine();
+        String titleIn = fin.readLine(); // first line is title
         fout.write("<html>");
         fout.newLine();
         fout.write("<head>");
         fout.newLine();
-        fout.write("<title>" + titleIn + "</title");
+        fout.write("<title>" + titleIn + "</title>");
         fout.newLine();
         fout.write("</head>");
         fout.newLine();
