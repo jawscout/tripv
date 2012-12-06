@@ -9,54 +9,50 @@ class VPicture extends VElement
     private String width;
     private String height;
     
-    public VPicture(StringTokenizer st)
+    /**
+     * It is assumed that all inputs from the text file are in the format 
+     * "Paramter = XXXXYYYY" any other format will throw an exception.
+     */
+    public VPicture(String[] st, int pos)
     {
         width = "0";
         height = "0";
-        String temp;
-        while(st.hasMoreTokens())
+        while(pos <= st.length)
         {
-            temp = st.nextToken();
-            if(temp.contains("http"))
+            if(st[pos].equalsIgnoreCase("url"))
             {
-                url = temp;
+                url = st[pos+2];
+                pos += 3;
             }
-            /**
-             * This if block assumes an input format of Width = XXXX.
-             * We first advance the token to the "=" then set the width
-             * variable to the next token.
-             */
-            else if(temp.equals("Width"))
+            else if(st[pos].equalsIgnoreCase("Width"))
             {
-                temp = st.nextToken();
-                width = st.nextToken();
+                width = st[pos+2];
+                pos += 3;
             }
-            /**
-             * This if block assume the same input format as used in width.
-             */
-            else if(temp.equals("Height"))
+            else if(st[pos].equalsIgnoreCase("Height"))
             {
-                temp = st.nextToken();
-                height = st.nextToken();
+                height = st[pos+2];
+                pos+=3;
             }
-            /**
-             * The next 2 if blocks assume that if alignment and color are 
-             * specified then they are specified in the following syntax:
-             * alignment/color = XXXX
-             */
-            else if(temp.contains("alignment"))
+            else if(st[pos].equalsIgnoreCase("alignment"))
             {
-                temp = st.nextToken();
-                alignment = st.nextToken();
+                alignment = st[pos+2];
+                pos += 3;
             }
-            else if(temp.contains("color"))
+            else if(st[pos].equalsIgnoreCase("color"))
             {
-                temp = st.nextToken();
-                color = st.nextToken();
+                color = st[pos+2];
+                pos += 3;
+            }
+            else if(st[pos].equalsIgnoreCase("alt"))
+            {
+                alt = st[pos+2];
+                pos += 3;
             }
             else
             {
-                alt = temp;
+                throws new Exception();
+                pos++;
             }
         }
     }
