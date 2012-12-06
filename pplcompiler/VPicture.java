@@ -12,8 +12,9 @@ class VPicture extends VElement
     /**
      * It is assumed that all inputs from the text file are in the format 
      * "Paramter = XXXXYYYY" any other format will throw an exception.
+     * @throws SyntaxException 
      */
-    public VPicture(String[] st, int pos)
+    public VPicture(String[] st, int pos) throws SyntaxException
     {
         width = "0";
         height = "0";
@@ -52,7 +53,6 @@ class VPicture extends VElement
             else
             {
                 throw new SyntaxException("incorrect syntax: "+st[pos]);
-                pos++;
             }
         }
     }

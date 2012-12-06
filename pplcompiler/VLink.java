@@ -7,7 +7,7 @@ class VLink extends VElement
     private String url;
     private String text;
     
-    public VLink(String[] st, int pos) 
+    public VLink(String[] st, int pos) throws SyntaxException 
     {
         /**
              * I assume that for all class variables, they are defined in the 
@@ -39,7 +39,6 @@ class VLink extends VElement
             else
             {
                 throw new SyntaxException("incorrect syntax: "+st[pos]);
-                pos++;
             }
         }
     }
