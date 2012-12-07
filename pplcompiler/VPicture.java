@@ -18,7 +18,7 @@ class VPicture extends VElement
     {
         width = "0";
         height = "0";
-        while(pos <= st.length)
+        while(pos <= st.length-2)
         {
             if(st[pos].equalsIgnoreCase("url"))
             {
