@@ -56,14 +56,13 @@ public class Main {
         String[] st = null;
         while(!lineIn.toLowerCase().equals("end")){
             try{
-            List<String> matchList = new ArrayList<String>();
-			Pattern regex = Pattern.compile("[^\\s\"']+|\"[^\"]*\"|'[^']*'");
-			Matcher regexMatcher = regex.matcher(lineIn);
-			while (regexMatcher.find()) {
-			    matchList.add(regexMatcher.group());
-			}
-//FIX THIS
-			st =            (String[]) matchList.toArray();
+                List<String> matchList = new ArrayList<String>();
+                Pattern regex = Pattern.compile("[^\\s\"']+|\"[^\"]*\"|'[^']*'");
+                Matcher regexMatcher = regex.matcher(lineIn);
+                while (regexMatcher.find()) {
+                    matchList.add(regexMatcher.group());
+                }
+                st = matchList.toArray(new String[matchList.size()]);
             //st = lineIn.split(" "/*"[^\\s\"']+|\"([^\"]*)\"|'([^']*)'"*/);
             firstWord = st[0];
             }
