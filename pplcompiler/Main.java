@@ -235,65 +235,65 @@ public class Main {
             }
             lineIn = fin.readLine();
         }
-        fout.write("<div>");
+        fout.write("<div width=\"33%\">");
         for(VElement element: leftTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: leftMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: leftBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\">");
         for(VElement element: centerTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: centerMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: centerBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\">");
         for(VElement element: rightTop){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: rightMiddle){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
         fout.newLine();
-        fout.write("<div>");
+        fout.write("<div width=\"33%\" style=\"float:left;\">");
         for(VElement element: rightBottom){
-            element.toHTML();
+            fout.write(element.toHTML());
             fout.newLine();
         }
         fout.write("</div>");
